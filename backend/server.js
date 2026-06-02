@@ -25,15 +25,19 @@ app.use(helmet({
 // ── CORS ─────────────────────────────────────────────────────────────────────
 const ALLOWED_ORIGINS = (process.env.FRONTEND_URL || 'http://localhost:5173')
     .split(',')
-    .map(o => o.trim());
+    .map(o => o.trim().replace(/\/$/, '')); // normalize by removing trailing slashes
 
 app.use(cors({
     origin: (origin, callback) => {
-        // allow no-origin (curl/mobile) or whitelisted origins
-        if (!origin || ALLOWED_ORIGINS.includes(origin)) {
+        // allow no-origin (curl/mobile/local-ssr)
+        if (!origin) return callback(null, true);
+        
+        const cleanOrigin = origin.trim().replace(/\/$/, '');
+        if (ALLOWED_ORIGINS.includes(cleanOrigin) || ALLOWED_ORIGINS.includes('*')) {
             callback(null, true);
         } else {
-            callback(new Error(`CORS: origin ${origin} not allowed`));
+            console.warn(`⚠️ CORS Blocked: incoming origin "${origin}" is not in whitelist:`, ALLOWED_ORIGINS);
+            callback(null, false); // Reject gracefully without throwing Express server errors
         }
     },
     credentials: true,
