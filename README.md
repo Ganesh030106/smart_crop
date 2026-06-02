@@ -42,12 +42,6 @@ npm run dev
 ```
 *Note: The frontend runs on `http://localhost:5173` by default and proxies `/api` to the backend.*
 
-### 4. Database Seeding (Demo Data)
-To populate the database with demo farmers, advisories, alerts, and logs:
-```bash
-node seed.js
-```
-
 ## 📦 Production Deployment
 
 The project is configured for seamless deployment on **Render**.
@@ -59,8 +53,6 @@ The project is configured for seamless deployment on **Render**.
    - **Start Command**: `node backend/server.js`
 4. Set the necessary environment variables in the Render dashboard:
    - `DATABASE_URL`
-   - `ADMIN_EMAIL`
-   - `ADMIN_PASSWORD`
    - (`JWT_SECRET` is auto-generated)
 
 ## 🔒 Security Enhancements (Completed)
