@@ -1,0 +1,124 @@
+{
+    "regions": {
+        "upper_godavari": {
+            "name": "Upper Godavari",
+            "crops": {
+                "paddy": {
+                    "kharif": {
+                        "general": "Sow MTU-1010 or Swarna varieties. Transplant 25-day-old seedlings at 20x15 cm spacing. Apply 120 kg N/ha in 3 splits.",
+                        "pest_stemBorer": "Apply Cartap Hydrochloride 4G @ 25 kg/ha or spray Chlorpyrifos 20EC @ 2.5 ml/L. Set up pheromone traps @ 5/acre.",
+                        "pest_leafFolder": "Spray Monocrotophos 36SL @ 1.5 ml/L. Drain field for 3-4 days to reduce humidity.",
+                        "pest_brownPlantHopper": "Apply Imidacloprid 17.8SL @ 0.5 ml/L at base of plants. Avoid excessive nitrogen.",
+                        "fertilizer": "Basal: 40 kg N + 40 kg P2O5 + 40 kg K2O/ha. Top dress 40 kg N at tillering and 40 kg N at panicle initiation.",
+                        "market": "Current paddy MSP: ₹2,183/quintal. Nearest APMC: Bhadrachalam. Sell after drying to 14% moisture."
+                    }
+                },
+                "cotton": {
+                    "kharif": {
+                        "general": "Use Bt cotton hybrids. Sow at 90x60 cm spacing. Requires 3-4 irrigations. Apply 120:60:60 NPK kg/ha.",
+                        "pest_bollworm": "Monitor with pheromone traps. Spray Spinosad 45SC @ 0.3 ml/L or Emamectin Benzoate 5SG @ 0.4 g/L.",
+                        "pest_whitefly": "Apply Thiamethoxam 25WG @ 0.3 g/L. Remove and destroy infested leaves.",
+                        "fertilizer": "Apply FYM 10 t/ha before sowing. Split N application: 50% basal, 25% at squaring, 25% at boll formation.",
+                        "market": "Cotton MSP: ₹6,620/quintal (medium staple). Sell at CCI or APMC Warangal for best price."
+                    }
+                },
+                "maize": {
+                    "kharif": {
+                        "general": "Sow hybrid varieties like DHM-117. Spacing: 60x20 cm. Requires 5-6 irrigations. Apply 150:75:75 NPK.",
+                        "pest_fallArmyworm": "Apply Spinetoram 11.7SC @ 0.5 ml/L or Emamectin Benzoate. Apply in whorl stage. Use sand+lime mixture.",
+                        "fertilizer": "Apply 50% N + full P + full K at sowing. Remaining 50% N in 2 splits at knee-high and tasseling.",
+                        "market": "Maize MSP: ₹2,090/quintal. Store at <12% moisture. Nearest procurement: Khammam APMC."
+                    }
+                }
+            }
+        },
+        "north_konkan": {
+            "name": "North Konkan",
+            "crops": {
+                "paddy": {
+                    "kharif": {
+                        "general": "Use Karjat-6 or Ratnagiri-24 varieties suited to laterite soils. Transplant at 20x15 cm. Apply lime if pH < 5.5.",
+                        "pest_gundhibug": "Spray Malathion 50EC @ 2 ml/L at milky grain stage. Drain field and spray in early morning.",
+                        "pest_blastDisease": "Apply Tricyclazole 75WP @ 0.6 g/L or Isoprothiolane 40EC @ 1.5 ml/L at boot leaf stage.",
+                        "fertilizer": "Apply 80:40:40 NPK kg/ha. Use green manure (Sesbania) before transplanting to reduce fertilizer need.",
+                        "market": "Paddy MSP: ₹2,183/quintal. Konkan region has good demand for aromatic varieties. Sell at Ratnagiri APMC."
+                    }
+                },
+                "cashew": {
+                    "kharif": {
+                        "general": "Apply FYM 50 kg/tree. Prune dead wood after harvest. Mulch with dry leaves to conserve moisture.",
+                        "pest_teaMosquito": "Spray Dimethoate 30EC @ 2 ml/L or Imidacloprid 17.8SL @ 0.5 ml/L at flushing stage.",
+                        "fertilizer": "Apply 500g N + 125g P + 125g K per tree per year in 2 splits (pre-monsoon and post-monsoon).",
+                        "market": "Raw cashew nut: ₹120-150/kg. Export quality: Grade W-180 to W-320. Sell to APMC Panvel or exporters."
+                    }
+                }
+            }
+        },
+        "madhya_plateau": {
+            "name": "Madhya Plateau",
+            "crops": {
+                "soybean": {
+                    "kharif": {
+                        "general": "Sow JS-335 or NRC-37 varieties. Spacing: 45x5 cm. Inoculate with Rhizobium before sowing. Apply 30:60:40 NPK.",
+                        "pest_girdle_beetle": "Collect and destroy infested plants. Spray Chlorpyrifos 20EC @ 2.5 ml/L at 30-35 DAS.",
+                        "pest_stemFly": "Seed treatment with Thiamethoxam 70WS @ 3 g/kg seed. Spray Dimethoate 30EC @ 2 ml/L.",
+                        "fertilizer": "Apply 20 kg N + 60 kg P2O5 + 40 kg K2O/ha as basal. Rhizobium inoculation reduces N requirement.",
+                        "market": "Soybean MSP: ₹4,600/quintal. Sell at NCDEX-linked mandis in Indore or Ujjain for best price."
+                    }
+                },
+                "wheat": {
+                    "rabi": {
+                        "general": "Sow GW-322 or HI-8498 varieties. Sowing window: Nov 1-30. Spacing: 22.5 cm rows. Apply 120:60:40 NPK.",
+                        "pest_aphid": "Spray Dimethoate 30EC @ 1.5 ml/L or Imidacloprid 17.8SL @ 0.5 ml/L when population exceeds 10/tiller.",
+                        "pest_yellowRust": "Apply Propiconazole 25EC @ 1 ml/L at flag leaf stage. Use resistant varieties like HD-2967.",
+                        "fertilizer": "Apply 60 kg N at sowing, 30 kg N at first irrigation (CRI stage), 30 kg N at jointing.",
+                        "market": "Wheat MSP: ₹2,275/quintal. Sell at FCI procurement centers or APMC Bhopal. Grade A quality fetches premium."
+                    }
+                },
+                "chickpea": {
+                    "rabi": {
+                        "general": "Sow JG-11 or Vihar variety. Spacing: 30x10 cm. Requires only 1-2 irrigations. Apply 20:40:20 NPK.",
+                        "pest_podBorer": "Install pheromone traps @ 5/acre. Spray Indoxacarb 14.5SC @ 1 ml/L at 50% flowering.",
+                        "fertilizer": "Apply 20 kg N + 40 kg P2O5 + 20 kg K2O/ha as basal. Rhizobium inoculation essential.",
+                        "market": "Chickpea MSP: ₹5,440/quintal. Sell at APMC Sehore or Vidisha. Bold grain variety fetches 10-15% premium."
+                    }
+                }
+            }
+        }
+    },
+    "general_soil_advice": {
+        "residue_incorporation": "Incorporate crop residues to add 15-20 kg N/ha equivalent. Reduces need for chemical fertilizers by 20%.",
+        "manure_compost": "Apply FYM @ 5-10 t/ha or vermicompost @ 2-3 t/ha to improve soil organic carbon and water retention.",
+        "soil_testing": "Get soil tested every 3 years. Contact nearest KVK or soil testing lab. Cost: ₹50-100 per sample.",
+        "green_manure": "Grow Sesbania or Dhaincha for 45 days and incorporate before transplanting to add 60-80 kg N/ha."
+    },
+    "seasons": {
+        "kharif": {
+            "months": [
+                6,
+                7,
+                8,
+                9,
+                10
+            ],
+            "name": "Kharif (Monsoon)"
+        },
+        "rabi": {
+            "months": [
+                11,
+                12,
+                1,
+                2,
+                3
+            ],
+            "name": "Rabi (Winter)"
+        },
+        "zaid": {
+            "months": [
+                4,
+                5
+            ],
+            "name": "Zaid (Summer)"
+        }
+    }
+}

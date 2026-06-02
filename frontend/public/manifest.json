@@ -1,0 +1,25 @@
+{
+    "name": "Smart Crop Advisor",
+    "short_name": "CropAdvisor",
+    "description": "AI-powered crop advisory for rainfed smallholder farmers - SDG-15",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#0f1f17",
+    "theme_color": "#1a3a2a",
+    "orientation": "portrait",
+    "icons": [
+        {
+            "src": "/leaf-icon.svg",
+            "sizes": "any",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        }
+    ],
+    "categories": [
+        "agriculture",
+        "productivity",
+        "utilities"
+    ],
+    "lang": "en",
+    "dir": "ltr"
+}

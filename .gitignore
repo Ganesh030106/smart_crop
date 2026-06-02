@@ -1,0 +1,40 @@
+# ── Node ──────────────────────────────────
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnp
+.pnp.js
+
+# ── Build output ──────────────────────────
+dist/
+build/
+.vite/
+
+# ── Environment / secrets ─────────────────
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+backend/.env
+
+# ── OS ────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ── IDE ───────────────────────────────────
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# ── Logs ─────────────────────────────────
+*.log
+logs/
+
+# ── Test files ───────────────────────────
+frontend/src/engine/test_engine.js

@@ -1,0 +1,27 @@
+services:
+  # ── Backend API + Frontend (single unified service) ────────────────────────
+  - type: web
+    name: smart-crop-advisor
+    runtime: node
+    rootDir: .
+    buildCommand: cd frontend && npm ci && npm run build && cd ../backend && npm ci
+    startCommand: node backend/server.js
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: DATABASE_URL
+        sync: false          # Set manually in Render dashboard
+      - key: JWT_SECRET
+        generateValue: true  # Render auto-generates a secure random value
+      - key: ADMIN_EMAIL
+        sync: false          # Set manually in Render dashboard
+      - key: ADMIN_PASSWORD
+        sync: false          # Set manually in Render dashboard
+      - key: FRONTEND_URL
+        fromService:
+          type: web
+          name: smart-crop-advisor
+          property: host

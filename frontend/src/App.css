@@ -1,0 +1,420 @@
+/* ============================================================
+   App Layout — driven by JS class: layout-mobile / tablet / desktop
+   Applied to .app div by useDevice() hook
+   ============================================================ */
+
+.app {
+  display: flex;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: var(--bg-primary);
+  width: 100%;
+  position: relative;
+}
+
+/* ── Shared: app-main ── */
+.app-main {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  min-width: 0;
+  width: 100%;
+}
+
+/* ── Shared: sidebar (hidden by default) ── */
+.sidebar-nav {
+  display: none;
+}
+
+/* ── Shared: bottom nav (hidden by default) ── */
+.bottom-nav {
+  display: none;
+}
+
+/* ============================================================
+   MOBILE LAYOUT  (.layout-mobile)
+   ============================================================ */
+.layout-mobile {
+  flex-direction: column;
+}
+
+.layout-mobile .sidebar-nav {
+  display: none;
+}
+
+.layout-mobile .bottom-nav {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: var(--nav-height);
+  background: rgba(15, 31, 23, 0.97);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid var(--border-color);
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 4px;
+  padding-bottom: env(safe-area-inset-bottom, 0);
+  z-index: 1000;
+}
+
+/* ============================================================
+   TABLET LAYOUT  (.layout-tablet)
+   Icon-only sidebar, no bottom nav
+   ============================================================ */
+.layout-tablet {
+  flex-direction: row;
+}
+
+.layout-tablet .bottom-nav {
+  display: none;
+}
+
+.layout-tablet .sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 72px;
+  min-width: 72px;
+  flex-shrink: 0;
+  background: rgba(15, 31, 23, 0.98);
+  border-right: 1px solid var(--border-color);
+  padding: 20px 8px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  z-index: 100;
+}
+
+.layout-tablet .sidebar-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.layout-tablet .sidebar-brand-text,
+.layout-tablet .sidebar-status-text,
+.layout-tablet .sidebar-label,
+.layout-tablet .sidebar-footer {
+  display: none;
+}
+
+.layout-tablet .sidebar-logo {
+  font-size: 1.8rem;
+}
+
+.layout-tablet .sidebar-status {
+  display: flex;
+  justify-content: center;
+  padding: 8px 0;
+  margin-bottom: 8px;
+  width: 100%;
+}
+
+.layout-tablet .sidebar-links {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.layout-tablet .sidebar-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 8px;
+  background: none;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition);
+  width: 100%;
+  touch-action: manipulation;
+  position: relative;
+}
+
+.layout-tablet .sidebar-item:hover {
+  background: var(--bg-card);
+}
+
+.layout-tablet .sidebar-item.active {
+  background: rgba(74, 222, 128, 0.12);
+  border: 1px solid rgba(74, 222, 128, 0.25);
+}
+
+.layout-tablet .sidebar-item.active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 60%;
+  background: var(--accent-green);
+  border-radius: 0 3px 3px 0;
+}
+
+.layout-tablet .sidebar-icon {
+  font-size: 1.4rem;
+}
+
+/* ============================================================
+   DESKTOP LAYOUT  (.layout-desktop)
+   Full sidebar with labels
+   ============================================================ */
+.layout-desktop {
+  flex-direction: row;
+}
+
+.layout-desktop .bottom-nav {
+  display: none;
+}
+
+.layout-desktop .sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  width: 220px;
+  min-width: 220px;
+  flex-shrink: 0;
+  background: rgba(15, 31, 23, 0.98);
+  border-right: 1px solid var(--border-color);
+  padding: 24px 12px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  z-index: 100;
+}
+
+.layout-desktop .sidebar-brand {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  padding: 0 8px 24px;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.layout-desktop .sidebar-logo {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.layout-desktop .sidebar-brand-text {
+  display: block;
+}
+
+.layout-desktop .sidebar-title {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.layout-desktop .sidebar-sub {
+  font-size: 0.75rem;
+  color: var(--accent-green);
+  font-weight: 600;
+}
+
+.layout-desktop .sidebar-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  margin-bottom: 8px;
+}
+
+.layout-desktop .sidebar-status-text {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.layout-desktop .sidebar-links {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.layout-desktop .sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  background: none;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition);
+  width: 100%;
+  text-align: left;
+  touch-action: manipulation;
+  position: relative;
+}
+
+.layout-desktop .sidebar-item:hover {
+  background: var(--bg-card);
+}
+
+.layout-desktop .sidebar-item.active {
+  background: rgba(74, 222, 128, 0.12);
+  border: 1px solid rgba(74, 222, 128, 0.25);
+}
+
+.layout-desktop .sidebar-item.active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 60%;
+  background: var(--accent-green);
+  border-radius: 0 3px 3px 0;
+}
+
+.layout-desktop .sidebar-icon {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.layout-desktop .sidebar-label {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: color var(--transition);
+  white-space: nowrap;
+}
+
+.layout-desktop .sidebar-item.active .sidebar-label {
+  color: var(--accent-green);
+}
+
+.layout-desktop .sidebar-footer {
+  display: block;
+  padding: 16px 12px 0;
+  border-top: 1px solid var(--border-color);
+  margin-top: 16px;
+}
+
+.layout-desktop .sidebar-footer p {
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  margin: 2px 0;
+}
+
+/* ============================================================
+   Nav item styles (shared for bottom nav)
+   ============================================================ */
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  flex: 1;
+  padding: 6px 2px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  transition: all var(--transition);
+  min-height: 56px;
+  touch-action: manipulation;
+  position: relative;
+}
+
+.nav-item::before {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 3px;
+  background: var(--accent-green);
+  border-radius: var(--radius-full);
+  transition: width var(--transition);
+}
+
+.nav-item.active::before {
+  width: 20px;
+}
+
+.nav-icon {
+  font-size: 1.25rem;
+  transition: transform var(--transition);
+}
+
+.nav-item.active .nav-icon {
+  transform: scale(1.15);
+}
+
+.nav-label {
+  font-size: 0.52rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: color var(--transition);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+
+/* ── Bottom Nav Fit Fix — All tabs visible ── */
+.bottom-nav {
+  overflow-x: hidden !important;
+  justify-content: space-around !important;
+  gap: 0;
+}
+
+.bottom-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.nav-item {
+  min-width: 0;
+  flex: 1 1 0 !important;
+  padding: 6px 2px;
+}
+
+/* ─── Animation Utilities for Planning Screen ─── */
+.fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ─── Score Ring ─── */
+.score-ring circle {
+  transition: stroke-dashoffset 1s ease-in-out;
+}
